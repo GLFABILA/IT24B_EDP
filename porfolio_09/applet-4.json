@@ -1,0 +1,20 @@
+[
+    {
+        "student_id": 1,
+        "student_name": "GL",
+        "student_program": "BS-Information Technology",
+        "student_enrolled-date": "2023-07-30"
+    },
+    {
+        "student_id": 2,
+        "student_name": "DIA",
+        "student_program": "BS-Information Technology",
+        "student_enrolled-date": "2023-07-30"
+    },
+    {
+        "student_id": 3,
+        "student_name": "RHICS",
+        "student_program": "BS-Information Technology",
+        "student_enrolled-date": "2023-07-30"
+    }
+]
