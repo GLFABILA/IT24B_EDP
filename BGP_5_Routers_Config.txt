@@ -1,0 +1,87 @@
+! Configuration for R1
+
+hostname R1
+interface FastEthernet0/0
+ ip address 10.0.12.1 255.255.255.252
+ no shutdown
+!
+interface Loopback0
+ ip address 192.168.1.1 255.255.255.255
+!
+router bgp 100
+ neighbor 10.0.12.2 remote-as 200
+ network 192.168.1.1 mask 255.255.255.255
+
+
+! Configuration for R2
+
+hostname R2
+interface FastEthernet0/0
+ ip address 10.0.12.2 255.255.255.252
+ no shutdown
+interface FastEthernet0/1
+ ip address 10.0.23.1 255.255.255.252
+ no shutdown
+!
+interface Loopback0
+ ip address 192.168.2.2 255.255.255.255
+!
+router bgp 200
+ neighbor 10.0.12.1 remote-as 100
+ neighbor 10.0.23.2 remote-as 300
+ network 192.168.2.2 mask 255.255.255.255
+
+
+! Configuration for R3
+
+hostname R3
+interface FastEthernet0/0
+ ip address 10.0.23.2 255.255.255.252
+ no shutdown
+interface FastEthernet0/1
+ ip address 10.0.34.1 255.255.255.252
+ no shutdown
+!
+interface Loopback0
+ ip address 192.168.3.3 255.255.255.255
+!
+router bgp 300
+ neighbor 10.0.23.1 remote-as 200
+ neighbor 10.0.34.2 remote-as 400
+ network 192.168.3.3 mask 255.255.255.255
+
+
+! Configuration for R4
+
+hostname R4
+interface FastEthernet0/0
+ ip address 10.0.34.2 255.255.255.252
+ no shutdown
+interface FastEthernet0/1
+ ip address 10.0.45.1 255.255.255.252
+ no shutdown
+!
+interface Loopback0
+ ip address 192.168.4.4 255.255.255.255
+!
+router bgp 400
+ neighbor 10.0.34.1 remote-as 300
+ neighbor 10.0.45.2 remote-as 500
+ network 192.168.4.4 mask 255.255.255.255
+
+
+! Configuration for R5
+
+hostname R5
+interface FastEthernet0/0
+ ip address 10.0.45.2 255.255.255.252
+ no shutdown
+!
+interface Loopback0
+ ip address 192.168.5.5 255.255.255.255
+!
+router bgp 500
+ neighbor 10.0.45.1 remote-as 400
+ network 192.168.5.5 mask 255.255.255.255
+
+
